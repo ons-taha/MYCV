@@ -1,0 +1,8 @@
+services:
+  - type: static_site
+    name: MYCV
+    env: node
+    repo: https://github.com/ons-taha/MYCV.git
+    branch: main
+    buildCommand: npm install && npm run build
+    publishPath: dist/freelance-cv

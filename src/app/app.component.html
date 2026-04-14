@@ -1,0 +1,110 @@
+<main class="cv-shell">
+  <section class="hero-panel">
+    <div class="hero-layer"></div>
+    <div class="hero-content grid-2">
+      <div class="hero-copy">
+        <span class="hero-tag">COVER CV</span>
+        <h1>{{ name }}</h1>
+        <p class="hero-title">{{ subtitle }}</p>
+
+        <p class="hero-description">
+          {{ profile }}
+        </p>
+
+        <div class="contact-block">
+          <div><span>Phone:</span> {{ phone }}</div>
+          <div><span>Email:</span> <a href="mailto:{{ email }}">{{ email }}</a></div>
+          <div><span>Location:</span> {{ location }}</div>
+          <div><span>LinkedIn:</span> <a href="{{ linkedin }}" target="_blank">ons-taha-2881721b6</a></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-photo-shell">
+          <img [src]="photoUrl" alt="Profile photo of {{ name }}" class="hero-photo" />
+          <div class="photo-glow"></div>
+        </div>
+        <div class="neon-gradient"></div>
+        <div class="neon-frame"></div>
+        <div class="neon-text">AI</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-grid">
+    <article class="content-card profile-card">
+      <h2>Profile</h2>
+      <p>
+        Bridges business strategy with advanced engineering execution by translating complex domain challenges into scalable, reliable architectures. Recognized for driving data-informed decision-making, optimizing system performance, and delivering solutions that create sustainable organizational impact.
+      </p>
+    </article>
+
+    <article class="content-card summary-card">
+      <h2>Snapshot</h2>
+      <ul>
+        <li>Backend systems architecture</li>
+        <li>Enterprise data platforms</li>
+        <li>AI & OCR pipelines</li>
+        <li>Production-ready RAG systems</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="content-card">
+    <h2>Work Experience</h2>
+    <div class="timeline">
+      <article class="timeline-item" *ngFor="let item of experiences">
+        <div class="timeline-meta">
+          <span class="timeline-date">{{ item.date }}</span>
+          <span class="timeline-company">{{ item.company }}</span>
+        </div>
+        <div class="timeline-body">
+          <h3>{{ item.title }}</h3>
+          <ul>
+            <li *ngFor="let bullet of item.bullets">{{ bullet }}</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="content-grid">
+    <article class="content-card">
+      <h2>Key Projects</h2>
+      <ul class="simple-list">
+        <li *ngFor="let project of projects">{{ project }}</li>
+      </ul>
+    </article>
+
+    <article class="content-card">
+      <h2>Education & Certifications</h2>
+      <p>{{ education }}</p>
+      <ul class="simple-list">
+        <li *ngFor="let cert of certifications">{{ cert }}</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="content-card skills-card">
+    <h2>Skills & Tools</h2>
+    <div class="skills-grid">
+      <article class="skill-group" *ngFor="let category of skillCategories">
+        <h3>{{ category.title }}</h3>
+        <ul>
+          <li *ngFor="let item of category.items">{{ item }}</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="content-card languages-card">
+    <h2>Languages</h2>
+    <div class="language-list">
+      <span *ngFor="let lang of languages">{{ lang }}</span>
+    </div>
+  </section>
+
+  <footer class="cv-footer">
+    Designed as a neon-themed AI Data Engineer CV cover page in Angular.
+  </footer>
+</main>
